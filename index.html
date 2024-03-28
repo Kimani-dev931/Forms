@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <h1 id="fb">Employee Registration</h1> 
+    <form id="inputForm">
+        <h1 id="fh">Registration Form</h1>
+        <label for="text">Username:</label>
+        <input type="text" id="text" name="text">
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    
+        <label for="number">Age:</label>
+        <input type="number" id="number" name="number">
+    
+        <label for="date">Date of birth:</label>
+        <input type="date" id="date" name="date">
+    
+        <label for="checkbox">Full Time:</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+
+        <label for="checkbox">Part Time:</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+
+    
+        <label for="radio">Gender:</label>
+        <input type="radio" id="radio1" name="radio" value="option1">
+        <label for="radio1">Male</label>
+        <input type="radio" id="radio2" name="radio" value="option2">
+        <label for="radio2">Female</label>
+    
+        <label for="select">Skills:</label>
+        <select id="select" name="select">
+            <option value="option1">App development</option>
+            <option value="option2">Web development</option>
+            <option value="option3">Dev ops</option>
+        </select>
+    
+        <label for="textarea">Tell us about yourself:</label>
+        <textarea id="textarea" name="textarea"></textarea>
+    
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        const form = document.getElementById('inputForm');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+        });
+    </script>
+</body>
+</html>
